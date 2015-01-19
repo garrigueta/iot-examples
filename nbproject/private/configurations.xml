@@ -37,7 +37,7 @@
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
-        <developmentServer>pi@192.168.1.137:22</developmentServer>
+        <developmentServer>pi@192.168.1.134:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <dbx_gdbdebugger version="1">
@@ -46,8 +46,6 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
-        <gdb_signals>
-        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
