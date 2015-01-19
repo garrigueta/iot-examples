@@ -15,3 +15,6 @@ My goal to acomplish is create an ad-hoc wireless connection between 2 raspberry
 All classes ara using linux x86 compier, by adding raspberry pi to Netbeans as BuildHost you can deploy all code on it. This makes more easly all build process because you can build, deploy, locally or remotelly at same time.
 
 Please feel free to use, add or share this code.
+
+more info about netbeans and remote building:
+https://netbeans.org/kb/docs/cnd/remotedev-tutorial.html
