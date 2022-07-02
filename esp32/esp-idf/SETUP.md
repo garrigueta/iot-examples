@@ -4,8 +4,6 @@
 
 ESP-IDF requires some prerequisite tools to be installed so you can build firmware for supported chips. The prerequisite tools include Python, Git, cross-compilers, CMake and Ninja build tools.
 
-For this Getting Started we’re going to use the Command Prompt, but after ESP-IDF is installed you can use Eclipse or another graphical IDE with CMake support instead.
-
 ### Windows Environment
 
 to be completed...
@@ -14,11 +12,11 @@ to be completed...
 
  1 Install the required tools:
 
- ```console
+```console
 
 sudo apt-get install git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
  
- ```
+```
 
  2 Get ESP-IDF Code from the GitHub repository
 
@@ -28,7 +26,7 @@ mkdir -p ~/esp
 cd ~/esp
 git clone --recursive https://github.com/espressif/esp-idf.git
 
- ```
+```
 
  Note: If you don't have CMake >= 3.16 installed you can run the follwing command:
 
