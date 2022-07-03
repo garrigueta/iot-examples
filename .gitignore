@@ -42,3 +42,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .vscode
+
+*.obj
+*.old
+*.bin
+*.elf
+*.map
+.bin_timestamp
+*.ninja*
+*build
