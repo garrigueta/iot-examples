@@ -15,7 +15,6 @@ You need Git installed locally to checkout the source code of this tool, you can
 1 Download the required Micropython tools:
 
 ```console
-
 git clone https://github.com/micropython/micropython.git
 ```
 
@@ -28,7 +27,6 @@ You can download the last release too from GitHub without using git CLI:
 To be using the python CLI tools for the ESP32 board you need to install the right package, use the follwing command:
 
 ```console
-
 pip install esptool
 ```
 
@@ -37,7 +35,6 @@ pip install esptool
 To have all ready and to check every thing we can erase the board content using the follwoing command:
 
 ```console
-
 esptool.py --port COM11 erase_flash
 ```
 
