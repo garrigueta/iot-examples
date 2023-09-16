@@ -37,13 +37,6 @@ def add():
         return redirect(url_for('index'))
     return render_template("add.html")
 
-@app.route('/post', methods=['POST'])
-def post():
-    title = request.json['title']
-    content = request.json['content']
-    db.
-
-
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
