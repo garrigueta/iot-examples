@@ -20,3 +20,4 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
 from src.web import routes
+from src.api import api_routes

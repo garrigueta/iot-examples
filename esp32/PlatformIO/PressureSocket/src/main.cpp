@@ -33,6 +33,8 @@
 
 #include <WiFi.h>
 
+#include <HTTPClient.h>
+
 #define RED   0xFF0000
 #define GREEN 0x00FF00
 #define BLUE  0x0000FF
@@ -73,9 +75,10 @@ static const unsigned char PROGMEM logo_bmp[] =
 MS5611 MS5611(0x77);
 uint32_t start, stop;
 
-const char* ssid = "MIWIFI_2G_KqRx";
-const char* password = "VIENA2017";
+const char* ssid = "<ssid>";
+const char* password = "<ssid_pwd>";
 
+String serverName = "http://192.168.1.137:5000/get";
 
 String get_wifi_status(int status){
     switch(status){
@@ -178,12 +181,33 @@ void loop() {
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);  
   display.print("Temp: ");
-  display.println(MS5611.getTemperature(), 3);
+  String temp = String(MS5611.getTemperature())
+  display.println(temp);
   display.print("Press: ");
-  display.println(MS5611.getPressure(), 3);
+  String press = String(MS5611.getPressure())
   display.println(get_wifi_status(WiFi.status()));
   display.print("IP: ");
   display.println(WiFi.localIP());
   display.display();
+
+  HTTPClient http;
+  String serverPath = serverName + "?TEMP=" + temp +
+  "&PRESS=" + press;
+  http.begin(serverPath.c_str());
+  int httpResponseCode = http.GET();      
+  if (httpResponseCode>0) {
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpResponseCode);
+    String payload = http.getString();
+    Serial.println(payload);
+  }
+  else {
+    Serial.print("Error code: ");
+    Serial.println(httpResponseCode);
+  }
+  // Free resources
+  http.end();
+
+
   delay(2000);
 }
