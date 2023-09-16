@@ -9,4 +9,4 @@ Uses:
 - HTTPClient lib
 
 ## Server Side
-Uses: (PyUIServer)[https://github.com/garrigueta/IOT_Examples/tree/main/raspi/python/PyUIServer]
+Uses: [PyUIServer](https://github.com/garrigueta/IOT_Examples/tree/main/raspi/python/PyUIServer)
