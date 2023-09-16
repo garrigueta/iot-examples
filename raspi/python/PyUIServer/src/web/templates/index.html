@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Project -- Welcome
+
+{% endblock %}
+
+{% block content %}
+
+	<article>
+	    <header>
+	        <h1>WELCOME!</h1>
+	        <body>
+			<img src="/../static/img/download.jpeg" alt="Puppy">  
+			</body>
+	        <h3>Welcome to the world of puppies</h3>
+	        <p>One store for all your pet needs.</p>
+	    </header>
+	    <section>
+    		<h3>Available Puppies</h3>
+   		 	<li><a href="{{ url_for ("sale") }}">Click Here</a></li>
+    		<p></p>
+		</section>                
+	</article>
+	
+{% endblock %}

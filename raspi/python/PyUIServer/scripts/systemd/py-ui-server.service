@@ -1,0 +1,10 @@
+[Unit]
+Description=PyUIServer
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/gueta/web
+ExecStart=/home/gueta/web/venv/bin/gunicorn app:app &
+
+[Install]
+WantedBy=multi-user.target
