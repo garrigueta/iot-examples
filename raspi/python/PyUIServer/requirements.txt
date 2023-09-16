@@ -1,0 +1,13 @@
+websockets
+sqlalchemy
+requests
+pyyaml
+flask
+flask-wtf
+python-dotenv
+WTForms
+email_validator
+flask-sqlalchemy
+flask-bcrypt
+flask-login
+rq
