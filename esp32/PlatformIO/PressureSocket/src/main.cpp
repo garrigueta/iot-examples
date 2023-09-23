@@ -78,7 +78,7 @@ uint32_t start, stop;
 const char* ssid = "<ssid>";
 const char* password = "<ssid_pwd>";
 
-String serverName = "http://192.168.1.137:5000/get";
+String serverName = "http://192.168.1.137:5000/";
 
 String get_wifi_status(int status){
     switch(status){
@@ -181,18 +181,20 @@ void loop() {
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);  
   display.print("Temp: ");
-  String temp = String(MS5611.getTemperature())
+  String temp = String(MS5611.getTemperature());
   display.println(temp);
   display.print("Press: ");
-  String press = String(MS5611.getPressure())
+  String press = String(MS5611.getPressure());
   display.println(get_wifi_status(WiFi.status()));
   display.print("IP: ");
-  display.println(WiFi.localIP());
+  String ip = String(WiFi.localIP());
+  display.println(ip);
   display.display();
 
   HTTPClient http;
-  String serverPath = serverName + "?TEMP=" + temp +
-  "&PRESS=" + press;
+  String serverPath = serverName + "get/?TEMP=" + temp +
+  "&PRESS=" + press +
+  "&HOST=" + ip;
   http.begin(serverPath.c_str());
   int httpResponseCode = http.GET();      
   if (httpResponseCode>0) {
@@ -200,14 +202,11 @@ void loop() {
     Serial.println(httpResponseCode);
     String payload = http.getString();
     Serial.println(payload);
-  }
-  else {
+  } else {
     Serial.print("Error code: ");
     Serial.println(httpResponseCode);
   }
   // Free resources
   http.end();
-
-
   delay(2000);
 }
