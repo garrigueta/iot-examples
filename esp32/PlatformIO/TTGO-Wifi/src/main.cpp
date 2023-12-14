@@ -3,7 +3,6 @@
 
 // constants
 const char *ssid = "<wifi_name>";
-// const char* ssid = "Lowi3570";
 const char *password = "VIENA2017";
 // const char* password = "ZLB758SL2KL4YW";
 
