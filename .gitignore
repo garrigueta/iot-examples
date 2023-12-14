@@ -188,3 +188,6 @@ build/
 # eclpise
 .cproject
 .project
+
+# Platformio
+.pio
