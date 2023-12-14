@@ -181,3 +181,6 @@ dmypy.json
 
 # database
 *.db
+
+# cmake
+build/
