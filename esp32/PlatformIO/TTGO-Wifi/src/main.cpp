@@ -3,7 +3,7 @@
 
 // constants
 const char *ssid = "<wifi_name>";
-const char *password = "VIENA2017";
+const char *password = "<wifi_pwd>";
 
 // put function declarations here:
 // int myFunction(int, int);
