@@ -2,8 +2,7 @@
 #include <WiFi.h>
 
 // constants
-const char *ssid = "MIWIFI_2G_KqRx";
-const char *password = "VIENA2017";
+#include <credentials.h>
 // put function declarations here:
 void initWiFi()
 {
