@@ -181,3 +181,10 @@ dmypy.json
 
 # database
 *.db
+
+# cmake
+build/
+
+# eclpise
+.cproject
+.project
