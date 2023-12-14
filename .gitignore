@@ -184,3 +184,7 @@ dmypy.json
 
 # cmake
 build/
+
+# eclpise
+.cproject
+.project

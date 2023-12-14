@@ -1,0 +1,15 @@
+[submodule "Adafruit_SSD1306"]
+	path = arduino/Libs/Adafruit_SSD1306
+	url = https://github.com/adafruit/Adafruit_SSD1306
+
+[submodule "Adafruit-BMP085-Library"]
+	path = arduino/Libs/Adafruit-BMP085-Library
+	url = https://github.com/adafruit/Adafruit-BMP085-Library
+
+[submodule "Adafruit-GFX-Library"]
+	path = arduino/Libs/Adafruit-GFX-Library
+	url = https://github.com/adafruit/Adafruit-GFX-Library
+
+[submodule "Arduino-MS5611"]
+	path = arduino/Libs/Arduino-MS5611
+	url = https://github.com/jarzebski/Arduino-MS5611
