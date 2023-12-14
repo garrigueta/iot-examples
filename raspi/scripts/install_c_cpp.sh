@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sudo apt install cmake clang clang-format cppcheck global build-essential gdb git -y
+sudo apt install cmake clang clang-format cppcheck global build-essential gdb git ninja-build -y
 # Wringpi is now obsolete
 # Install Wiringpi alternative
 cd /tmp
