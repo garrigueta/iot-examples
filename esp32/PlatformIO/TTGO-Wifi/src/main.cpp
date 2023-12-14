@@ -26,7 +26,7 @@ void initWiFi()
   Serial.println(WiFi.localIP());
 }
 
-DynamicJsonDocument jsonRequest(String url)
+DynamicJsonDocument jsonRequest(String url, bool isDate)
 {
   DynamicJsonDocument doc(1024);
   HTTPClient http;
@@ -48,7 +48,14 @@ DynamicJsonDocument jsonRequest(String url)
     Serial.println(httpResponse);
   }
   http.end();
-  return doc;
+  String res = ""
+  if(isDate){
+    String data_res = doc["datetime"]
+    res = data_res.substring(0, data_res.indexOf("T"));
+  }else{
+    res = doc["included"][0]["attributes"]["values"][0]["value"];
+  }
+  return res;
 }
 // int myFunction(int, int);
 //
@@ -67,16 +74,11 @@ void setup()
     // Canviar string dia per variables
     //
 
-    DynamicJsonDocument jsonTimestamp = jsonRequest(url_timestamp);
-    String data = jsonTimestamp["datetime"];
-    String data_avui = data.substring(0, data.indexOf("T"));
-    Serial.print(data_avui);
+    String data_avui = jsonRequest(url_timestamp, true);
+    Serial.println("data_avui %s", data_avui);
     String url_precios = "https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=" + data_avui + "T00:00&end_date=" + data_avui + "T23:59&time_trunc=hour";
-    // DynamicJsonDocument preus = jsonRequest(url_hora);
-    jsonTimestamp = jsonRequest(url_precios);
-    String result = jsonTimestamp["included"][0]["attributes"]["values"][0]["value"];
-    // String result = doc["included"][0]["attributes"]["values"][0]["value"];
-    Serial.print(result);
+    String result = jsonRequest(url_precios, false);
+    Serial.println("result %s", result);
 
     // Hora actual
   }
