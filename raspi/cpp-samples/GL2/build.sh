@@ -1,0 +1,1 @@
+g++ gltest.cpp -o gltest -Wall -I /usr/include -lGL -lGLEW -lglut
